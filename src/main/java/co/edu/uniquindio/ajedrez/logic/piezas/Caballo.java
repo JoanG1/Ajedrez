@@ -22,6 +22,7 @@ public class Caballo extends Pieza implements IMover{
                 casilla.setPieza(null);
                 destino.setPieza(this);
                 this.setCasilla(destino);
+                casilla.setTablero(tablero);
                 break;
             }
         }
@@ -157,7 +158,7 @@ public class Caballo extends Pieza implements IMover{
 
     public ArrayList<Coordinate> movidas(Pieza pieza) {
         ArrayList<Coordinate> coordinates = new ArrayList<>();
-        Coordinate coordinate = pieza.getCasilla().getCoordinate();
+        Coordinate coordinate = this.getCasilla().getCoordinate();
         if (coordinate != null) {
             // Las posibles posiciones del caballo pueden ser obtenidas teniendo en cuenta que las posiciones
             // toman la forma de un circulo espaciado cada 45 grados.

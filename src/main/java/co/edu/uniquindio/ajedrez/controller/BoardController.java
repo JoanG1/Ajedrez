@@ -66,9 +66,12 @@ public class BoardController {
                         continue;
                     }
 
+                    casilla.setTablero(this.tablero);
+
                     // Validamos para mover la pieza seleccionada a un lugar valido
                     if (piezaSeleccionada != null) {
                         piezaSeleccionada.mover(casilla);
+                        piezaSeleccionada = null;
                     }
 
                     if (casilla.getPieza() != null) {
@@ -78,10 +81,6 @@ public class BoardController {
                         else if (casilla.getPieza().equals(piezaSeleccionada)) {
                             piezaSeleccionada = null;
                         }
-                    }
-
-                    if (piezaSeleccionada != null) {
-
                     }
 
                     verMovidas(piezaSeleccionada);
